@@ -2,39 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Ceylon Travelex Luxury Design System
+All colors MUST be HSL for consistency and theming.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Brand Colors - Luxury Travel Palette */
+    --background: 45 28% 97%;
+    --foreground: 20 14% 15%;
+    
+    /* Luxury Brand Colors */
+    --brand-gold: 45 85% 68%;
+    --brand-gold-light: 45 85% 78%;
+    --brand-gold-dark: 45 85% 58%;
+    
+    --brand-emerald: 158 55% 35%;
+    --brand-emerald-light: 158 55% 45%;
+    --brand-emerald-dark: 158 55% 25%;
+    
+    --brand-cream: 45 30% 94%;
+    --brand-beige: 45 20% 88%;
+    
+    /* Neutral Luxury Tones */
+    --luxury-charcoal: 20 14% 20%;
+    --luxury-stone: 45 10% 65%;
+    --luxury-pearl: 45 15% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card & Surface Colors */
+    --card: var(--brand-cream);
+    --card-foreground: var(--luxury-charcoal);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: var(--brand-cream);
+    --popover-foreground: var(--luxury-charcoal);
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary Brand Colors */
+    --primary: var(--brand-emerald);
+    --primary-foreground: var(--brand-cream);
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: var(--brand-beige);
+    --secondary-foreground: var(--luxury-charcoal);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: var(--brand-beige);
+    --muted-foreground: var(--luxury-stone);
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: var(--brand-gold);
+    --accent-foreground: var(--luxury-charcoal);
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 51%;
+    --destructive-foreground: var(--brand-cream);
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: var(--brand-beige);
+    --input: var(--brand-beige);
+    --ring: var(--brand-emerald);
+    
+    /* Luxury Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--brand-emerald)) 0%, hsl(var(--brand-emerald-dark)) 100%);
+    --gradient-luxury: linear-gradient(135deg, hsl(var(--brand-gold-light)) 0%, hsl(var(--brand-gold)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--brand-cream)) 100%);
+    
+    /* Luxury Shadows */
+    --shadow-luxury: 0 20px 60px -15px hsl(var(--brand-emerald) / 0.3);
+    --shadow-gold: 0 10px 30px -10px hsl(var(--brand-gold) / 0.4);
+    --shadow-elegant: 0 8px 32px -8px hsl(var(--luxury-charcoal) / 0.15);
+    
+    /* Animations */
+    --transition-luxury: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s ease-out;
+
+    /* Typography */
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Inter", sans-serif;
 
     --radius: 0.5rem;
 
