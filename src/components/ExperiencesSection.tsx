@@ -1,10 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { ArrowRight, Clock, Users, Star } from "lucide-react";
 import teaPlantationImage from "@/assets/tea-plantation.jpg";
 import luxuryResortImage from "@/assets/luxury-resort.jpg";
 import templeBuddhaImage from "@/assets/temple-buddha.jpg";
 import safariElephantsImage from "@/assets/safari-elephants.jpg";
+import wellnessYogaImage from "@/assets/wellness-yoga.jpg";
+import luxurySpaImage from "@/assets/luxury-spa.jpg";
+import meditationPavilionImage from "@/assets/meditation-pavilion.jpg";
+import ayurvedicWellnessImage from "@/assets/ayurvedic-wellness.jpg";
+import yogaInfinityPoolImage from "@/assets/yoga-infinity-pool.jpg";
 
 export const ExperiencesSection = () => {
   const experiences = [
@@ -43,6 +49,39 @@ export const ExperiencesSection = () => {
       groupSize: "4-8 People", 
       rating: 4.9,
       category: "Adventure"
+    }
+  ];
+
+  const wellnessExperiences = [
+    {
+      title: "Wellness & Yoga Retreats",
+      description: "Find inner peace with yoga sessions by serene lakes and rivers, connecting mind, body, and nature in perfect harmony.",
+      image: wellnessYogaImage,
+      category: "Wellness"
+    },
+    {
+      title: "Luxury Spa Treatments",
+      description: "Indulge in traditional Ayurvedic treatments and modern spa therapies in stunning tropical settings.",
+      image: luxurySpaImage,
+      category: "Spa"
+    },
+    {
+      title: "Meditation Pavilions",
+      description: "Experience tranquility in purpose-built meditation spaces overlooking breathtaking ocean vistas.",
+      image: meditationPavilionImage,
+      category: "Mindfulness"
+    },
+    {
+      title: "Ayurvedic Wellness",
+      description: "Discover ancient healing wisdom through authentic Ayurvedic treatments in serene garden sanctuaries.",
+      image: ayurvedicWellnessImage,
+      category: "Healing"
+    },
+    {
+      title: "Infinity Pool Yoga",
+      description: "Practice yoga on floating decks over infinity pools with stunning coastal views at sunrise.",
+      image: yogaInfinityPoolImage,
+      category: "Luxury Wellness"
     }
   ];
 
@@ -133,8 +172,72 @@ export const ExperiencesSection = () => {
           ))}
         </div>
 
+        {/* Wellness Experiences Carousel */}
+        <div className="mt-20 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center space-x-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full mb-6">
+              <span className="text-sm font-body font-medium">Wellness Journeys</span>
+            </div>
+            
+            <h3 className="font-heading text-2xl lg:text-3xl font-bold text-foreground mb-4">
+              <span className="bg-gradient-luxury bg-clip-text text-transparent">Rejuvenate Your Soul</span>
+            </h3>
+            
+            <p className="font-body text-base text-muted-foreground max-w-xl mx-auto leading-relaxed">
+              Discover inner peace and physical wellness through our curated collection of transformative experiences.
+            </p>
+          </div>
+
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {wellnessExperiences.map((experience, index) => (
+                <CarouselItem key={experience.title} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="group overflow-hidden bg-card border-0 shadow-elegant hover:shadow-luxury transition-all duration-500 h-full">
+                    <div className="relative overflow-hidden h-64">
+                      <img
+                        src={experience.image}
+                        alt={experience.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                      
+                      {/* Category Badge */}
+                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-luxury-charcoal px-3 py-1 rounded-full text-sm font-body font-medium">
+                        {experience.category}
+                      </div>
+
+                      {/* Content Overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <h4 className="font-heading text-xl font-semibold mb-2">
+                          {experience.title}
+                        </h4>
+                        <p className="font-body text-sm text-white/90 leading-relaxed">
+                          {experience.description}
+                        </p>
+                        
+                        {/* Decorative Element */}
+                        <div className="flex items-center space-x-2 mt-4">
+                          <div className="h-px bg-brand-gold w-8 group-hover:w-12 transition-all duration-300"></div>
+                          <div className="w-1 h-1 bg-brand-gold rounded-full"></div>
+                          <div className="h-px bg-brand-gold w-8 group-hover:w-12 transition-all duration-300"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
+
         {/* CTA Section */}
-        <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: '0.8s' }}>
           <Button variant="outline-luxury" size="lg" className="font-body font-medium">
             View All Experiences
             <ArrowRight className="ml-2 w-5 h-5" />
