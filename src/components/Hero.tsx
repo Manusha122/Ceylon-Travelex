@@ -1,19 +1,67 @@
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin } from "lucide-react";
-import heroImage from "@/assets/hero-waterfall.jpg";
+import { useEffect, useState } from "react";
+import heroVideo1 from "@/assets/hero-video-1.jpg";
+import heroVideo2 from "@/assets/hero-video-2.jpg";
+import heroVideo3 from "@/assets/hero-video-3.jpg";
 
 export const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const heroVideos = [
+    {
+      image: heroVideo1,
+      location: "Luxury Resort, Southern Coast",
+      alt: "Luxury resort with infinity pool overlooking ocean"
+    },
+    {
+      image: heroVideo2,
+      location: "Ancient Temple, Anuradhapura",
+      alt: "Ancient temple ruins in jungle mist"
+    },
+    {
+      image: heroVideo3,
+      location: "Yala National Park Safari",
+      alt: "Elephants in national park at sunset"
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroVideos.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+    <section id="hero" className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Video Carousel */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Stunning waterfall in Sri Lanka"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/50" />
+        <Carousel
+          opts={{
+            loop: true,
+            align: "start",
+          }}
+          className="w-full h-full"
+        >
+          <CarouselContent className="-ml-0">
+            {heroVideos.map((video, index) => (
+              <CarouselItem key={index} className="pl-0 basis-full">
+                <div className="relative w-full h-screen">
+                  <img
+                    src={video.image}
+                    alt={video.alt}
+                    className="w-full h-full object-cover transition-transform duration-[7000ms] hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/50" />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
 
       {/* Content */}
@@ -21,7 +69,7 @@ export const Hero = () => {
         {/* Location Tag */}
         <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full mb-6 animate-fade-in">
           <MapPin className="w-4 h-4" />
-          <span className="text-sm font-body font-medium">Laxapana Falls, Maskeliya, Sri Lanka</span>
+          <span className="text-sm font-body font-medium">{heroVideos[currentSlide]?.location || "Sri Lanka"}</span>
         </div>
 
         {/* Main Heading */}
@@ -66,11 +114,28 @@ export const Hero = () => {
           </div>
         </div>
 
+        {/* Slide Indicators */}
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {heroVideos.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentSlide ? 'bg-brand-gold' : 'bg-white/50 hover:bg-white/70'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float">
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+          <button
+            onClick={() => document.getElementById('trending-packages')?.scrollIntoView({ behavior: 'smooth' })}
+            className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center hover:border-white/80 transition-colors cursor-pointer"
+          >
             <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
-          </div>
+          </button>
         </div>
       </div>
     </section>

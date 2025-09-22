@@ -27,7 +27,7 @@ export const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-subtle">
+    <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-subtle">
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">

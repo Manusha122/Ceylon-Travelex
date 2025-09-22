@@ -86,7 +86,7 @@ export const ExperiencesSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="experiences" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
