@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { DestinationCard } from "@/components/DestinationCard";
 import anuradhapuraImage from "@/assets/anuradhapura.jpg";
 import arugamBayImage from "@/assets/arugam-bay.jpg";
@@ -150,6 +151,7 @@ export default function Destinations() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

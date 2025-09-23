@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, Users, MapPin, Heart } from "lucide-react";
 
@@ -123,6 +124,7 @@ export default function About() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }
