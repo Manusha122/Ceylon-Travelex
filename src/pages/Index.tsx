@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+// import * as React from "react";
 const Index = () => {
   const navigate = useNavigate();
 

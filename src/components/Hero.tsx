@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import Button from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Play, Pause } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -101,7 +101,7 @@ export const Hero = () => {
         {/* Video Title Overlay */}
         <div className="absolute top-6 left-6 z-20">
           <div className="bg-black/20 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-            <div className="text-xs opacity-80 mb-1">Now Playing</div>
+            {/* <div className="text-xs opacity-80 mb-1">Now Playing</div> */}
             <div className="font-heading text-sm font-semibold">{heroVideos[currentSlide]?.title}</div>
           </div>
         </div>
@@ -121,19 +121,19 @@ export const Hero = () => {
         </h1>
 
         {/* Subtitle */}
-        <div className="flex items-center justify-center space-x-2 mb-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+  <div className="flex items-center justify-center space-x-2 mb-8 animate-slide-up delay-[200ms]">
           <div className="h-px bg-brand-gold w-8"></div>
           <p className="font-heading text-lg lg:text-xl text-white/90 font-medium">Since 2010</p>
           <div className="h-px bg-brand-gold w-8"></div>
         </div>
 
-        <p className="font-body text-lg lg:text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed animate-slide-up" style={{ animationDelay: '0.4s' }}>
+  <p className="font-body text-lg lg:text-xl text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed animate-slide-up delay-[400ms]">
           Discover the pearl of the Indian Ocean with bespoke luxury experiences, 
           curated exclusively for the discerning traveler.
         </p>
 
         {/* CTA Section */}
-        <div className="space-y-6 animate-scale-in" style={{ animationDelay: '0.6s' }}>
+  <div className="space-y-6 animate-scale-in delay-[600ms]">
           <p className="font-heading text-2xl lg:text-3xl text-white font-medium">
             Where do you want to go?
           </p>
@@ -191,6 +191,7 @@ export const Hero = () => {
           <button
             onClick={() => document.getElementById('trending-packages')?.scrollIntoView({ behavior: 'smooth' })}
             className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center hover:border-white/80 transition-colors cursor-pointer"
+            title="Scroll to trending packages"
           >
             <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
           </button>

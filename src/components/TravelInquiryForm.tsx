@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
@@ -448,15 +448,46 @@ export const TravelInquiryForm = () => {
             </div>
           </div>
 
-          {/* Submit Button - Full Width */}
-          <div className="lg:col-span-2 pt-6 border-t">
+          {/* Buttons Section */}
+          <div className="lg:col-span-2 pt-6 border-t space-y-4 md:space-y-0 md:flex md:gap-4 md:justify-center">
+            {/* Submit Button */}
             <Button
               type="submit"
               disabled={loading}
-              className="w-full lg:w-auto mx-auto block bg-brand-olive hover:bg-brand-olive/90 text-white font-body font-semibold px-12 py-3"
+              className="w-full md:w-auto relative overflow-hidden bg-gradient-to-r from-primary/90 to-primary 
+                hover:from-primary hover:to-primary/90 text-primary-foreground font-body font-semibold 
+                px-12 py-6 transition-all duration-300 ease-out hover:scale-105 
+                shadow-lg hover:shadow-xl active:scale-95"
             >
-              {loading ? "Processing..." : "ENQUIRE NOW"}
-              {!loading && <Download className="ml-2 w-5 h-5" />}
+              <span className="flex items-center justify-center gap-2">
+                {loading ? (
+                  <>
+                    <div className="animate-spin rounded-full h-5 w-5 border-2 border-primary-foreground border-t-transparent" />
+                    <span>Processing...</span>
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    <span>Submit Inquiry</span>
+                  </>
+                )}
+              </span>
+            </Button>
+
+            {/* Download PDF Button */}
+            <Button
+              type="button"
+              onClick={generatePDF}
+              disabled={loading}
+              className="w-full md:w-auto relative overflow-hidden bg-gradient-to-r from-secondary/90 to-secondary 
+                hover:from-secondary hover:to-secondary/90 text-secondary-foreground font-body font-semibold 
+                px-12 py-6 transition-all duration-300 ease-out hover:scale-105 
+                shadow-lg hover:shadow-xl active:scale-95 group"
+            >
+              <span className="flex items-center justify-center gap-2">
+                <Download className="w-5 h-5 transition-transform group-hover:translate-y-0.5" />
+                <span>Save as PDF</span>
+              </span>
             </Button>
           </div>
         </form>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/ui/button";
 import { Menu, X, Phone, Mail } from "lucide-react";
 
 export const Header = () => {
@@ -53,10 +53,10 @@ export const Header = () => {
                 <Phone className="w-4 h-4" />
                 <span>+94 773 555 553</span>
               </div>
-              <div className="flex items-center space-x-1">
+              {/* <div className="flex items-center space-x-1">
                 <Mail className="w-4 h-4" />
                 <span>info@ceylontravelex.com</span>
-              </div>
+              </div> */}
             </div>
             <Button variant="luxury" size="sm" asChild>
               <Link to="/contact">Enquire</Link>

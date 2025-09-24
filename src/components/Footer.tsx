@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import Button from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Facebook, Instagram, Twitter, Youtube, Award, Star } from "lucide-react";
@@ -11,7 +11,7 @@ export const Footer = () => {
     <footer 
       className="relative bg-cover bg-center bg-no-repeat text-white"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('/lovable-uploads/{B439B524-0276-4AC5-B2B8-7870C03F378A}.png.png')`
+        backgroundImage: `url('/uploads/footer.jpg')`
       }}
     >
       {/* Quote Section */}

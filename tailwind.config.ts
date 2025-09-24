@@ -18,8 +18,7 @@ export default {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        
+        foreground: "hsl(var(--foreground))",   
         // Luxury Brand Colors
         "brand-gold": {
           DEFAULT: "hsl(var(--brand-gold))",

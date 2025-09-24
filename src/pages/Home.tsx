@@ -5,6 +5,9 @@ import { ExperiencesSection } from "@/components/ExperiencesSection";
 import { WhyChooseUsSection } from "@/components/WhyChooseUsSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { Footer } from "@/components/Footer";
+import WhoWeAreSection from "../components/WhoWeAreSection";
+import LuxeProvisionsSection from "../components/LuxeProvisionsSection";
+import PartnersSection from "../components/PartnersSection";
 
 export default function Home() {
   return (
@@ -17,7 +20,10 @@ export default function Home() {
         <WhyChooseUsSection />
         <TestimonialsSection />
       </main>
-      <Footer />
+  <WhoWeAreSection />
+  <LuxeProvisionsSection />
+  <PartnersSection />
+  <Footer />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import Button from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { ArrowRight, Clock, Users, Star } from "lucide-react";
@@ -107,7 +107,7 @@ export const ExperiencesSection = () => {
         </div>
 
         {/* Experiences Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-slide-up delay-[200ms]">
           {experiences.map((experience, index) => (
             <Card key={experience.title} className="group overflow-hidden bg-card border-0 shadow-elegant hover:shadow-luxury transition-all duration-500">
               <div className="relative overflow-hidden">
@@ -173,9 +173,9 @@ export const ExperiencesSection = () => {
         </div>
 
         {/* Wellness Experiences Carousel */}
-        <div className="mt-20 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+  <div className="mt-20 animate-fade-in delay-[600ms]">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center space-x-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full mb-6">
+            <div className="inline-flex items-center space-x-2 bg-[#6a7c3a]/10 text-[#6a7c3a] px-4 py-2 rounded-full mb-6">
               <span className="text-sm font-body font-medium">Wellness Journeys</span>
             </div>
             
@@ -237,8 +237,8 @@ export const ExperiencesSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          <Button variant="outline-luxury" size="lg" className="font-body font-medium">
+        <div className="text-center mt-16 animate-fade-in delay-[800ms]">
+          <Button variant="luxury" size="lg" className="font-body font-medium">
             View All Experiences
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
