@@ -1,182 +1,186 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Twitter, Linkedin, ArrowRight } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { MapPin, Phone, Mail, Facebook, Instagram, Twitter, Youtube, Award, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-luxury-charcoal text-white">
-      {/* Newsletter Section */}
-      <div className="bg-gradient-luxury py-16">
-        <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-          <h3 className="font-heading text-2xl md:text-3xl font-bold mb-4">
-            Stay Connected with Ceylon Travelex
-          </h3>
-          <p className="font-body text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-            Subscribe to our newsletter for exclusive travel insights, luxury package updates, 
-            and special offers from the pearl of the Indian Ocean.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-            <Input 
-              type="email" 
-              placeholder="Enter your email address"
-              className="bg-white/10 border-white/20 text-white placeholder:text-white/70 focus:border-white/50"
-            />
-            <Button variant="secondary" className="bg-white text-primary hover:bg-white/90 whitespace-nowrap">
-              Subscribe
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
+    <footer 
+      className="relative bg-cover bg-center bg-no-repeat text-white"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('/lovable-uploads/{B439B524-0276-4AC5-B2B8-7870C03F378A}.png.png')`
+      }}
+    >
+      {/* Quote Section */}
+      <div className="relative py-16">
+        <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          {/* Top Quote Badge */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center bg-brand-gold/20 backdrop-blur-sm rounded-full px-6 py-3 border border-brand-gold/30">
+              <Award className="w-5 h-5 text-brand-gold mr-2" />
+              <span className="text-brand-gold font-semibold">$10 SMILE</span>
+            </div>
+            <p className="text-white/80 text-sm mt-4 max-w-2xl mx-auto">
+              Give back while traveling. Through our new GIVE-GoodFoundation,<br />
+              travelers plan, and support the critical operational programs. For<br />
+              every trip booked, we donate $10 toward children education<br />
+              projects to fulfill dreams that you make reality!
+            </p>
           </div>
-        </div>
-      </div>
 
-      {/* Main Footer Content */}
-      <div className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            
-            {/* Company Info */}
-            <div className="lg:col-span-1">
-              <div className="mb-6">
-                <h3 className="font-heading text-2xl font-bold mb-2">
-                  <span className="bg-gradient-luxury bg-clip-text text-transparent">Ceylon Travelex</span>
-                </h3>
-                <p className="font-body text-sm text-white/70">
-                  Setting the Standard for Luxury Travel
-                </p>
-              </div>
-              
-              <p className="font-body text-white/80 leading-relaxed mb-6">
-                Since 2010, we've been crafting extraordinary luxury travel experiences 
-                in Sri Lanka, combining authentic local insights with world-class service.
-              </p>
-
-              {/* Social Media */}
-              <div className="flex items-center space-x-4">
-                <Button variant="ghost" size="sm" className="p-2 text-white/70 hover:text-white hover:bg-white/10">
-                  <Facebook className="w-5 h-5" />
-                </Button>
-                <Button variant="ghost" size="sm" className="p-2 text-white/70 hover:text-white hover:bg-white/10">
-                  <Instagram className="w-5 h-5" />
-                </Button>
-                <Button variant="ghost" size="sm" className="p-2 text-white/70 hover:text-white hover:bg-white/10">
-                  <Twitter className="w-5 h-5" />
-                </Button>
-                <Button variant="ghost" size="sm" className="p-2 text-white/70 hover:text-white hover:bg-white/10">
-                  <Linkedin className="w-5 h-5" />
-                </Button>
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="font-heading text-lg font-semibold mb-6 text-white">Quick Links</h4>
-              <ul className="space-y-3">
-                {[
-                  { label: "Home", path: "/" },
-                  { label: "Destinations", path: "/destinations" },
-                  { label: "About Us", path: "/about" },
-                  { label: "Contact", path: "/contact" },
-                  { label: "Travel Packages", path: "/destinations" },
-                  { label: "Luxury Experiences", path: "/destinations" }
-                ].map((link) => (
-                  <li key={link.label}>
-                    <Link 
-                      to={link.path}
-                      className="font-body text-white/70 hover:text-white transition-colors duration-200 flex items-center group"
-                    >
-                      <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-200" />
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div>
-              <h4 className="font-heading text-lg font-semibold mb-6 text-white">Our Services</h4>
-              <ul className="space-y-3">
-                {[
-                  "Luxury Accommodations",
-                  "Cultural Tours",
-                  "Wildlife Safaris", 
-                  "Beach Resorts",
-                  "Adventure Activities",
-                  "Wellness Retreats"
-                ].map((service) => (
-                  <li key={service}>
-                    <span className="font-body text-white/70 flex items-center group cursor-pointer hover:text-white transition-colors duration-200">
-                      <ArrowRight className="w-3 h-3 mr-2 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-200" />
-                      {service}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Contact Info */}
-            <div>
-              <h4 className="font-heading text-lg font-semibold mb-6 text-white">Get In Touch</h4>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 text-brand-gold mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="font-body text-white/80 text-sm leading-relaxed">
-                      123 Galle Road, Colombo 03<br />
-                      Sri Lanka
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-3">
-                  <Phone className="w-5 h-5 text-brand-gold flex-shrink-0" />
-                  <p className="font-body text-white/80 text-sm">+94 11 234 5678</p>
-                </div>
-                
-                <div className="flex items-center space-x-3">
-                  <Mail className="w-5 h-5 text-brand-gold flex-shrink-0" />
-                  <p className="font-body text-white/80 text-sm">info@ceylontravelex.com</p>
-                </div>
-                
-                <div className="flex items-start space-x-3">
-                  <Clock className="w-5 h-5 text-brand-gold mt-0.5 flex-shrink-0" />
-                  <div>
-                    <p className="font-body text-white/80 text-sm leading-relaxed">
-                      Mon - Fri: 9:00 AM - 6:00 PM<br />
-                      Sat: 9:00 AM - 2:00 PM<br />
-                      Sun: Closed
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="border-t border-white/10 py-6">
-        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <p className="font-body text-white/60 text-sm mb-4 md:mb-0">
-              © {currentYear} Ceylon Travelex (Pvt) Ltd. All rights reserved.
+          {/* Get A Quote Form */}
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-16 border border-white/20">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">GET A QUOTE</h2>
+            <p className="text-white/80 text-center mb-8">
+              Complete our travel form and we will create an itinerary <br />
+              according to your specific wants and needs.
             </p>
             
-            <div className="flex items-center space-x-6">
-              <Link to="#" className="font-body text-white/60 hover:text-white text-sm transition-colors duration-200">
-                Privacy Policy
-              </Link>
-              <Link to="#" className="font-body text-white/60 hover:text-white text-sm transition-colors duration-200">
-                Terms of Service
-              </Link>
-              <Link to="#" className="font-body text-white/60 hover:text-white text-sm transition-colors duration-200">
-                Cookie Policy
-              </Link>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div>
+                <Select>
+                  <SelectTrigger className="bg-white/10 border-white/30 text-white">
+                    <SelectValue placeholder="Destination" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="colombo">Colombo</SelectItem>
+                    <SelectItem value="kandy">Kandy</SelectItem>
+                    <SelectItem value="galle">Galle</SelectItem>
+                    <SelectItem value="ella">Ella</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              
+              <div>
+                <Select>
+                  <SelectTrigger className="bg-white/10 border-white/30 text-white">
+                    <SelectValue placeholder="Duration" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="3-5">3-5 Days</SelectItem>
+                    <SelectItem value="6-10">6-10 Days</SelectItem>
+                    <SelectItem value="11-15">11-15 Days</SelectItem>
+                    <SelectItem value="15+">15+ Days</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              
+              <Button className="bg-brand-gold hover:bg-brand-gold/90 text-luxury-charcoal font-semibold">
+                GET A QUOTE
+              </Button>
             </div>
+          </div>
+
+          {/* Main Footer Content */}
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
+            {/* Ceylon Travelex Logo */}
+            <div className="md:col-span-1 text-center md:text-left">
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold mb-2">
+                  <span className="text-brand-gold">Ceylon</span><br />
+                  <span className="text-white">Travelex</span>
+                </h3>
+                <div className="text-xs text-white/60">
+                  <p>Sri Lanka Tourism</p>
+                  <p>Ceylon Chamber of Commerce</p>
+                  <p>Board of Investment of SL</p>
+                  <p>Hotel School Graduates</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Packages */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4 text-brand-gold">PACKAGES</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link to="/destinations" className="text-white/80 hover:text-white transition-colors">Overland</Link></li>
+                <li><Link to="/destinations" className="text-white/80 hover:text-white transition-colors">Individual</Link></li>
+                <li><Link to="/destinations" className="text-white/80 hover:text-white transition-colors">Special Interest</Link></li>
+                <li><Link to="/destinations" className="text-white/80 hover:text-white transition-colors">Hill Country</Link></li>
+                <li><Link to="/destinations" className="text-white/80 hover:text-white transition-colors">Cultural Triangle</Link></li>
+                <li><Link to="/destinations" className="text-white/80 hover:text-white transition-colors">Beach</Link></li>
+                <li><Link to="/destinations" className="text-white/80 hover:text-white transition-colors">Adventure Tours</Link></li>
+                <li><Link to="/destinations" className="text-white/80 hover:text-white transition-colors">Wildlife</Link></li>
+                <li><Link to="/destinations" className="text-white/80 hover:text-white transition-colors">Ayurveda</Link></li>
+                <li><Link to="/destinations" className="text-white/80 hover:text-white transition-colors">Leisure</Link></li>
+                <li><Link to="/destinations" className="text-white/80 hover:text-white transition-colors">Luxury Wellness</Link></li>
+                <li><Link to="/destinations" className="text-white/80 hover:text-white transition-colors">Pilgrimage</Link></li>
+              </ul>
+            </div>
+
+            {/* Blog & About */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4 text-brand-gold">BLOG</h4>
+              <ul className="space-y-2 text-sm mb-6">
+                <li><Link to="#" className="text-white/80 hover:text-white transition-colors">Our Stories</Link></li>
+                <li><Link to="#" className="text-white/80 hover:text-white transition-colors">Travel Tips</Link></li>
+                <li><Link to="#" className="text-white/80 hover:text-white transition-colors">Gallery</Link></li>
+              </ul>
+              
+              <h4 className="text-lg font-semibold mb-4 text-brand-gold">ABOUT US</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link to="/about" className="text-white/80 hover:text-white transition-colors">Our Story</Link></li>
+                <li><Link to="/about" className="text-white/80 hover:text-white transition-colors">Board of Directors</Link></li>
+                <li><Link to="/about" className="text-white/80 hover:text-white transition-colors">Our Team</Link></li>
+              </ul>
+            </div>
+
+            {/* Contact & FAQ */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4 text-brand-gold">CONTACT US</h4>
+              <ul className="space-y-2 text-sm mb-6">
+                <li><Link to="/contact" className="text-white/80 hover:text-white transition-colors">Why We Are</Link></li>
+                <li><Link to="/contact" className="text-white/80 hover:text-white transition-colors">Our Guarantee</Link></li>
+                <li><Link to="/contact" className="text-white/80 hover:text-white transition-colors">Get In Touch</Link></li>
+                <li><Link to="/contact" className="text-white/80 hover:text-white transition-colors">Privacy Policy</Link></li>
+              </ul>
+              
+              <h4 className="text-lg font-semibold mb-4 text-brand-gold">FAQ</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link to="#" className="text-white/80 hover:text-white transition-colors">Travel</Link></li>
+                <li><Link to="#" className="text-white/80 hover:text-white transition-colors">Booking</Link></li>
+                <li><Link to="#" className="text-white/80 hover:text-white transition-colors">Accommodation</Link></li>
+                <li><Link to="#" className="text-white/80 hover:text-white transition-colors">Payment</Link></li>
+              </ul>
+            </div>
+
+            {/* Certifications */}
+            <div className="text-center">
+              <div className="flex flex-col items-center space-y-4">
+                <div className="bg-white/20 rounded-full p-4 w-16 h-16 flex items-center justify-center">
+                  <Star className="w-8 h-8 text-brand-gold" />
+                </div>
+                <div className="bg-white/20 rounded-full p-4 w-16 h-16 flex items-center justify-center">
+                  <Award className="w-8 h-8 text-brand-gold" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Social Media */}
+          <div className="flex justify-center space-x-6 mb-8">
+            <Button variant="ghost" size="sm" className="p-2 text-white/70 hover:text-brand-gold">
+              <Facebook className="w-5 h-5" />
+            </Button>
+            <Button variant="ghost" size="sm" className="p-2 text-white/70 hover:text-brand-gold">
+              <Instagram className="w-5 h-5" />
+            </Button>
+            <Button variant="ghost" size="sm" className="p-2 text-white/70 hover:text-brand-gold">
+              <Twitter className="w-5 h-5" />
+            </Button>
+            <Button variant="ghost" size="sm" className="p-2 text-white/70 hover:text-brand-gold">
+              <Youtube className="w-5 h-5" />
+            </Button>
+          </div>
+
+          {/* Bottom Copyright */}
+          <div className="text-center border-t border-white/20 pt-6">
+            <p className="text-white/60 text-sm">
+              © {currentYear} Travelex™ • All Rights Reserved • Privacy Policy
+            </p>
           </div>
         </div>
       </div>
