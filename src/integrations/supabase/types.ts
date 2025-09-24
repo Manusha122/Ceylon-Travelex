@@ -16,46 +16,91 @@ export type Database = {
     Tables: {
       travel_inquiries: {
         Row: {
+          adults_count: number | null
+          air_tickets: boolean | null
           budget_range: string | null
+          country_of_residence: string | null
           created_at: string
+          currency: string | null
           destination_interest: string | null
           email: string
+          enquiry_details: string | null
           group_size: number | null
           id: string
+          kids_count: number | null
           message: string
           name: string
           phone: string | null
+          preferred_accommodation: string | null
+          start_date: string | null
+          start_month: string | null
+          start_year: string | null
           status: string | null
+          total_budget: string | null
           travel_dates: string | null
+          travel_insurance: boolean | null
+          travel_preferences: string | null
+          trip_duration: string | null
           updated_at: string
+          visa_assistance: boolean | null
         }
         Insert: {
+          adults_count?: number | null
+          air_tickets?: boolean | null
           budget_range?: string | null
+          country_of_residence?: string | null
           created_at?: string
+          currency?: string | null
           destination_interest?: string | null
           email: string
+          enquiry_details?: string | null
           group_size?: number | null
           id?: string
+          kids_count?: number | null
           message: string
           name: string
           phone?: string | null
+          preferred_accommodation?: string | null
+          start_date?: string | null
+          start_month?: string | null
+          start_year?: string | null
           status?: string | null
+          total_budget?: string | null
           travel_dates?: string | null
+          travel_insurance?: boolean | null
+          travel_preferences?: string | null
+          trip_duration?: string | null
           updated_at?: string
+          visa_assistance?: boolean | null
         }
         Update: {
+          adults_count?: number | null
+          air_tickets?: boolean | null
           budget_range?: string | null
+          country_of_residence?: string | null
           created_at?: string
+          currency?: string | null
           destination_interest?: string | null
           email?: string
+          enquiry_details?: string | null
           group_size?: number | null
           id?: string
+          kids_count?: number | null
           message?: string
           name?: string
           phone?: string | null
+          preferred_accommodation?: string | null
+          start_date?: string | null
+          start_month?: string | null
+          start_year?: string | null
           status?: string | null
+          total_budget?: string | null
           travel_dates?: string | null
+          travel_insurance?: boolean | null
+          travel_preferences?: string | null
+          trip_duration?: string | null
           updated_at?: string
+          visa_assistance?: boolean | null
         }
         Relationships: []
       }
